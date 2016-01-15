@@ -1,76 +1,73 @@
-# �T�[�o�P��
-�i������x�l�b�g���[�N�ɂȂ�����ŃZ�b�g�A�b�v�������Byum�g���Ɗy�Ȃ̂ŁB�j
-�i�����Ȃ玑�ރ_�E�����[�h -> �T�[�o�Ɉړ� -> ��������Ȃ� -> ���ރ_�E�����[�h�@�����X�ƌJ��Ԃ�...�j
- * OS��Linux���C���X�g�[������iCentOS�ł悢�j
- * �X�y�b�N�͂ǂ̂��炢���Ȃ��B�B�B
+# サーバ１台  
+（ある程度ネットワークにつながる環境でセットアップしたい。yum使うと楽なので。）  
+（無理なら資材ダウンロード -> サーバに移動 -> 何か足りない -> 資材ダウンロード　を延々と繰り返す...）  
+ * OSはLinuxをインストールする（CentOSでよい）  
+ * スペックはどのくらいかなぁ。。。  
 
- * java
-    openjdk�ł�oraclejdk�ł�����
+ * java  
+    openjdkでもoraclejdkでもいい  
 
- * MySQL
-    SonarQube���K�v�Ƃ���
+ * MySQL  
+    SonarQubeが必要とする  
 
- * tomcat
-    gitbucket���N�����邽�߂ɕK�v
+ * tomcat  
+    gitbucketを起動するために必要  
 
- * maven
-    ���C�u������pom�ŊǗ�����
+ * maven  
+    ライブラリをpomで管理する  
 
- * nexus
-    maven���g�����C�u�����ijar�t�@�C���j���Ǘ�
-    �l�b�g���[�N�ɂȂ�����ł��Ȃ���Ȃ����ł��\�z���Ă������ق����悢
-    �O���l�b�g�s�̕������̏ꍇ�͕K�{
+ * nexus  
+    mavenが使うライブラリ（jarファイル）を管理  
+    ネットワークにつながる環境でもつながらない環境でも構築しておいたほうがよい  
+    外部ネット不可の閉じた環境の場合は必須  
 
  * git
- * gitbucket
-    �o�[�W�����Ǘ�
-    �\�[�X�R�[�h�̊Ǘ�
-    SVN�����}�[�W���ȒP
-    ���r���[��gitbucket��ō����m�F���ł���
-    �u�����`��^�O�̊Ǘ���SVN���ȒP
-    SVN���T�[�o�ʐM�p�x�����Ȃ�
-     ���ނ̋�����git�Ō��m���A�������������Ȃ��ƃT�[�o��push�ł��Ȃ��悤�ɂȂ��Ă���
-      -> �T�[�o��ɉ������ނ���邱�Ƃ��Ȃ��i�͂��j
+ * gitbucket  
+    バージョン管理  
+    ソースコードの管理  
+    SVNよりもマージが簡単  
+    レビューもgitbucket上で差分確認ができる  
+    ブランチやタグの管理がSVNより簡単  
+    SVNよりサーバ通信頻度が少ない  
+     資材の競合はgitで検知し、競合が解決しないとサーバにpushできないようになっている  
+      -> サーバ上に汚い資材が乗ることがない（はず）  
 
- * jenkins
-    �C�ӂ̃^�C�~���O�����I�Ƀr���h��e�X�g�R�[�h�̎��s��������ł���
-    �����[�X�O�Ƃ��ċA�����Ƃ��Ɏg��
-    SonarQube�ƘA�g���i���`�F�b�N�ɂ��g����
+ * jenkins  
+    任意のタイミングや定期的にビルドやテストコードの実行をしたりできる  
+    リリース前とか再帰試験とかに使う  
+    SonarQubeと連携し品質チェックにも使える  
 
- * SonarQube
-    �ÓI�`�F�b�N�B
-    �\�[�X�R�[�h�i���̌����鉻�B
-     �d��������z�Q�ƂȂǂ��m�F�ł���B
-     ���G�x������ł���B
-    gitbucket�̃\�[�X��������H
-    �J�o���b�W���H
+ * SonarQube  
+    静的チェック。  
+    ソースコード品質の見える化。  
+     重複実装や循環参照などが確認できる。  
+     複雑度も測定できる。  
+    gitbucketのソースも扱える？  
+    カバレッジも？  
 
- * IRC�i�T�[�o�j
-    �`���b�g�c�[��
-    �J���`�[�����ł̃R�~���j�P�[�V�����c�[��
-    git��jenkins�ƘA�g�����ăR�~�b�g����job���s���ʂ𗬂����Ƃ��ł���
+ * IRC（サーバ）  
+    チャットツール  
+    開発チーム内でのコミュニケーションツール  
+    gitやjenkinsと連携させてコミット情報やjob実行結果を流すことができる  
 
-# �N���C�A���g
- * jdk
- * git
- * maven
- * STS
- * IRC�i�N���C�A���g�j
+# クライアント  
+ * jdk  
+ * git  
+ * maven  
+ * STS  
+ * IRC（クライアント）  
 
-# junit
-# selenium
- �e�X�g
- UT��junit
- ��ʌn��selenium�iIE�Afirefox�Achrome�ɑΉ��ł���j
-
-
-
-# travis ci
- �\�[�X��push�����Ƃ��Ɏ����I�ɃR���p�C���`�F�b�N���Ă����
- ���r���[���ɂ��������R���p�C���Ƃ����Ă��ˁH�̊m�F���y�B
- github�Ƀf�t�H���g��������Ă�Bgitbucket�ɂ������Ă����H
-  ->�L���I�v�V�����ł����B�I�[�v���\�[�X�ɑ΂��Ă͖����g�p�\
+# junit  
+# selenium  
+ テスト  
+ UTはjunit  
+ 画面系はselenium（IE、firefox、chromeに対応できる）  
 
 
 
+# travis ci  
+ ソースをpushしたときに自動的にコンパイルチェックしてくれる  
+ レビュー時にそもそもコンパイルとおってるよね？の確認が楽。  
+ githubにデフォルト装備されてる。gitbucketにももってこれる？  
+  ->有償オプションでした。オープンソースに対しては無償使用可能  
 
