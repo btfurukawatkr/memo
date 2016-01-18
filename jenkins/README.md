@@ -14,5 +14,11 @@
  * JENKINS_HTTPS_KEYSTORE="/var/lib/jenkins/.ssl/.keystore"
  * JENKINS_HTTPS_KEYSTORE_PASSWORD="Password01!"
 
-## changge port number
- * defalt port number is already used by tomcat
+## change port number
+ * defalt port(8080,8009) number is already used by tomcat
+
+## add plugins
+ ### download and add to /var/lib/jenkins/plugin
+ * git-plugin
+ * scm-api
+ * git-client
