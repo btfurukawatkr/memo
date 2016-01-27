@@ -22,3 +22,16 @@
  * git-plugin
  * scm-api
  * git-client
+
+## jenkins plugins to install
+ * git
+ * ghprb
+ * github
+ * github-api
+ * token-macro
+ * plain-credentials
+ * ssh-agent
+ * workflow-step-api
+ * workflow-aggregator
+ * credentials
+
