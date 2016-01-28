@@ -54,7 +54,7 @@
   * set `Refspec` value as `+refs/pull/*:refs/remotes/origin/pr/*`
   * set `Branch Specifier(blank for 'any')` as `${sha1}`
   * select GitHub Pull Request Builder for build trigger
-  * type `root` for Admin list
+  * type `jenkinsbot` for Admin list
   * save the setting
  # if it's not working
   * check `http://{jenkins-host}:{jenkins-port}/log/all`
