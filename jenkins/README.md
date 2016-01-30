@@ -34,6 +34,7 @@
  * workflow-step-api
  * workflow-aggregator
  * credentials
+ * embeddable build status
 
 ## to hook with gitbucket pull-request
  # setting in gitbucket
